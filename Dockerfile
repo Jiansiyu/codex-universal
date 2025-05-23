@@ -120,6 +120,7 @@ RUN git -c advice.detachedHead=0 clone --branch ${NVM_VERSION} --depth 1 https:/
     && nvm install 18 \
     && nvm install 20 \
     && nvm install 22 \
+    && nvm install 24 \
     && nvm alias default $NODE_VERSION \
     && corepack enable \
     && corepack install -g yarn pnpm npm

@@ -86,7 +86,7 @@ RUN git -c advice.detachedHead=0 clone --branch ${PYENV_VERSION} --depth 1 https
     && echo 'export PATH="$$PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH"' >> /etc/profile \
     && echo 'eval "$(pyenv init - bash)"' >> /etc/profile \
     && cd ${PYENV_ROOT} && src/configure && make -C src \
-    && pyenv install 3.10 3.11.12 3.12 3.13 \
+    && pyenv install 3.9 3.10 3.11.12 3.12 3.13 \
     && pyenv global ${PYTHON_VERSION}
 # Install pipx for common global package managers (e.g. poetry)
 ENV PIPX_BIN_DIR=/root/.local/bin

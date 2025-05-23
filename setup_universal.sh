@@ -3,7 +3,7 @@
 set -euo pipefail
 
 CODEX_ENV_PYTHON_VERSION=${CODEX_ENV_PYTHON_VERSION:-}
-CODEX_ENV_NODE_VERSION=${CODEX_ENV_NODE_VERSION:-}
+CODEX_ENV_NODE_VERSION=${CODEX_ENV_NODE_VERSION:-24}
 CODEX_ENV_RUST_VERSION=${CODEX_ENV_RUST_VERSION:-}
 CODEX_ENV_GO_VERSION=${CODEX_ENV_GO_VERSION:-}
 CODEX_ENV_SWIFT_VERSION=${CODEX_ENV_SWIFT_VERSION:-}
@@ -27,6 +27,7 @@ if [ -n "${CODEX_ENV_NODE_VERSION}" ]; then
     nvm use "${CODEX_ENV_NODE_VERSION}"
     corepack enable
     corepack install -g yarn pnpm npm
+    npm install -g @openai/codex  # install the codex
 fi
 
 if [ -n "${CODEX_ENV_RUST_VERSION}" ]; then
